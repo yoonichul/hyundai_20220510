@@ -1,4 +1,4 @@
-//8_array2.c
+// 8_array2.c
 #include <stdio.h>
 /*
     1. 배열의 길이를 구하는 방법
@@ -68,21 +68,20 @@ int main(void)
 /*
 
 */
-int main()
-{
+int main() {
     int n = 0x12345678;
     int *p1 = &n;
-    char *p2 = (char*)&n;
+    char *p2 = (char *)&n;
 
-    printf("%p\n",p1);
-    printf("%p\n",p2);
+    printf("%p\n", p1);
+    printf("%p\n", p2);
 
     // 포인터 타입이 의미하는 것
-    printf("%x %x %x %x\n",p2[0],p2[1],p2[2],p2[3]);
-    /* 
+    printf("%x %x %x %x\n", p2[0], p2[1], p2[2], p2[3]);
+    /*
        0x12345678
        78 56 34 12 - Little Endian
-       12 34 56 78 - Big Endian - * Network     
+       12 34 56 78 - Big Endian - * Network
     */
 
     return 0;
@@ -90,15 +89,14 @@ int main()
 
 #endif
 #if 1
-int main(void)
-{
-    int arr[3] ={10, 20, 30};
-    int* p1 = arr;
-    printf("%lu\n",sizeof(*p1));
+int main(void) {
+    int arr[3] = {10, 20, 30};
+    int *p1 = arr;
+    printf("%lu\n", sizeof(*p1));
 
-    int (*p2)[3] = &arr;
-    printf("%lu\n",sizeof(*p2));
-    
+    int(*p2)[3] = &arr;
+    printf("%lu\n", sizeof(*p2));
+
     return 0;
 }
 #endif
