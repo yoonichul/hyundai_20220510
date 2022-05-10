@@ -9,7 +9,7 @@
 typedef int int32;
 typedef char int8;
 
-foo()
+int* foo()
 {
     int x[3];
     return x;
