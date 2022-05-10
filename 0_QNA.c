@@ -73,7 +73,7 @@ int main(void)
 }
 #endif
 
-#if 1
+#if 0
 void foo(int *x)
 {
     printf("foo : %lu\n",sizeof(x)); // 8 byte
@@ -90,5 +90,25 @@ int main()
 }
 #endif
 
+#if 1
+typedef int (*PARR3)[3];
+PARR3 foo(void)
+// int (*foo())[3]
+{
+    static int x[3] = {10, 20, 30};
+    printf("%d %d %d\n",x[0],x[1],x[2]);
+    return &x;
+}
+
+int main()
+{
+    int x[3];
+    int *p = x;
+    int (*p2)[3]=&x;
+
+    printf("main : %lu\n",sizeof(x)); //12 byte
+    foo();
+}
+#endif
 
 
