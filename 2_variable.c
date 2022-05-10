@@ -32,6 +32,26 @@
   - 프로그래머가 원하는 시점에 생성하고, 원하는 시점에 파기할 수 있습니다.
   - free를 잊을 경우, 메모리 누수 문제점이 있습니다.
   - 할당/해지의 오버헤드가 존재합니다.
+
+7. 타입
+  => 타입의 크기에 따라서 메모리 할당 크기가 결정됩니다.
+  - x64 기준
+  char   - 1byte
+      > 부호가 있는지 없는지는 컴파일러마다 다름
+    : signed char : -128 ~ 127 
+      > 부호가 있는 1 byte 정수를 표기할 경우 사용
+    : unsigned char : 0 ~ 255
+      > 0을 포함한 1 byte 양수의 정수를 표기할 경우 사용
+  short  - 2byte
+  int    - 4byte
+  long   - 4byte(Windows) / 8byte(Linux)  
+  long long - 8byte
+  
+  float  - 4byte
+  double - 8byte
+   > 부동소수점 타입
+     - 오차가 있습니다. 
+     - 동등성 비교가 불가능합니다.
 */
 int g1; // global variable
 static int g2;
@@ -44,8 +64,20 @@ static int g2;
 
 int main(void)
 {
-    int a; //local variable
-    static int b; // static local variable, inner static variable
+    // int a; //local variable
+    // static int b; // static local variable, inner static variable
+	  // printf("%lu\n", sizeof(long));
+    double a = 0.7;
+    double b = 0.1 * 7;
+    if(a == b)
+    {
+      printf(" Same \n");
+    }
+    else 
+    {
+      printf("Different\n");
+    }
+	  return 0;
     // int a2[10000] = {1,2,3};
 }
 
