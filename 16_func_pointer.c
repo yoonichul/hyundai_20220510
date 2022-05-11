@@ -31,8 +31,10 @@ int (*pfunc1)(int a, int b) = add;
 double (*pfunc2)(double a, double b) = sub;
 
 int main(void) {
-    printf("%d\n", (*pfunc1)(10, 20));
-    printf("%f\n", (*pfunc2)(30.0, 40.0));
+    // printf("%d\n", (*pfunc1)(10, 20));
+    printf("%d\n", pfunc1(10, 20));
+    // printf("%f\n", (*pfunc2)(30.0, 40.0));
+    printf("%.2f\n", pfunc2(30.0, 40.0));
 }
 
 #endif
