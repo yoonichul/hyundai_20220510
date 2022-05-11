@@ -31,6 +31,15 @@ int (*pfunc1)(int a, int b) = add;
 double (*pfunc2)(double a, double b) = sub;
 
 int main(void) {
+    int n = 10;
+    long long ptr_addr;
+    ptr_addr =(long long) &n;
+    int *ptr;
+    ptr = (int *)ptr_addr;
+    printf("ptr_addr: %llx\n",ptr_addr);
+    // printf("ptr_addr_value: %llx\n",ptr_addr);
+    printf("ptr: %llx\n",ptr);
+    printf("ptr_value: %d\n",*ptr);
     // printf("%d\n", (*pfunc1)(10, 20));
     printf("%d\n", pfunc1(10, 20));
     // printf("%f\n", (*pfunc2)(30.0, 40.0));
