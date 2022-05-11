@@ -10,6 +10,7 @@
 */
 // 함수의 프로토타입 선언
 // ==> 헤더파일을 통해 제공합니다.
+#if 1
 void foo(void);
 void goo(void);
 void foo() {
@@ -23,3 +24,4 @@ int main(void) {
     goo();
     return 0;
 }
+#endif
