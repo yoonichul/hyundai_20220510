@@ -54,6 +54,11 @@ int main() {
 */
 #if 1
 // non-recursive
+/*
+    Dynamic Programming
+    => 동적 계획법
+    => 계산의 결과를 캐시해서, 재활용할 수 있도록 만들어줍니다.
+*/
 int factorial1(int n) {
     int s = 1;
     for (int i = 1; i <= n; i++) {
