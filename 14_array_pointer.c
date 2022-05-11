@@ -28,6 +28,8 @@ int main(void) {
     print_array(x, 2);
 
     // int*p[3];  // [int*][int*][int*]
+    // - sizeof(p) : 24 byte
     // int(*p)[3]; // * --> int[3]
+    // - sizeof(p) : 8 byte
     return 0;
 }
