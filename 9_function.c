@@ -11,6 +11,10 @@
       - 변하는 것과 변하지 않는 것의 분리
       => 변하는 것을 인자를 통해 전달받습니다.
 */
+
+// print_array
+// printArray
+// PrintArray
 #if 0
 #define ARRAR_LENGTH(arr) (sizeof(arr) / sizeof(arr[0]))
 void print_array(int *arr, int n) {

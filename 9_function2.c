@@ -13,8 +13,10 @@
 #if 1
 void foo(void);
 void goo(void);
+// 상호 재귀
 void foo() {
     printf("foo\n");
+    goo();
 }
 void goo() {
     printf("goo\n");
