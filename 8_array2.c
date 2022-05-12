@@ -56,9 +56,12 @@ int main(void)
     int arr[3];
 
     printf("%p\n",arr); // int*
+    printf("%p\n",sizeof(arr));
     printf("%p\n",&arr[0]);
-
+    printf("%p\n",sizeof(&arr[0]));
     printf("%p\n",&arr); //int(*)[3]   
+    printf("%p\n",sizeof(&arr));
+    
     return 0;
 }
 
