@@ -143,3 +143,78 @@ int main() {
 
     Wirte Once, Run Anywhere
 */
+/*
+    20220512 REVIEW
+*/
+//  1. sizeof
+//  2. 9
+//  3. 다음 중 짝수/홀수를 판단할 때 사용하는 연산자는?
+//     ==> %(&)
+//  4. n이 3일때 아래 코드의 실행후에 n의 값은 얼마 일까요?
+//     if (n == 3 || ++n == 4) {}
+//     ==> 3
+#if 0
+int main(void) {
+    int arr[10] = {};
+    // 홀수 여부를 확인하고 싶다.
+    int n = 20;
+    scanf("%d", &n);
+    // & 연산의 결과는 왼쪽 피연산자의 부호와 같은 결과가 나옵니다.
+    //  1 % 2 ==> 1
+    //  -1 % 2==> -1
+    // if (n & 1 == 1) {
+    // if (n % 2 == 1) {
+    //     printf("odd number\n");
+    // } else {
+    //     printf("even number\n");
+    // }
+    if(n < 0)
+    {
+        goto foo;  // 중첩된 loop를 한번에 빠져나갈 경우 사용합니다.
+    }
+    printf("goo\n");
+    printf("goo\n");
+    printf("goo\n");
+foo:
+    printf("foo\n");
+    printf("foo\n");
+    printf("foo\n");
+
+    return 0;
+}
+#endif
+
+#if 1
+int main(void) {
+    int x[3][3] = {
+        {1, 2, 3},
+        {10, -20, 30},
+        {100, 200, 300},
+    };
+    int flag = 0;
+#if 0
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (x[i][j] < 0) {
+                flag = 1;
+                break;
+            }
+            printf("%d\n", x[i][j]);
+        }
+        if (flag)
+            break;
+    }
+#endif
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (x[i][j] < 0) {
+                goto exit;
+            }
+            printf("%d\n", x[i][j]);
+        }
+    }
+exit:
+    return 0;
+}
+#endif
