@@ -28,6 +28,7 @@ struct CCC{
     char c;
 };
 // aaaa_____bbbbbbbbc_______ => 8 + 8 + 8 = 24
+#if 0
 int main(void)
 {
     printf("%lu\n",sizeof(struct AAA));
@@ -36,3 +37,4 @@ int main(void)
 
     return 0;
 }
+#endif
