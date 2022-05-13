@@ -10,6 +10,8 @@
     => 0 : 48
     2. 문자열 타입
     - char 배열이지만 마지막 원소가 '\0'(NULL)입니다.
+    3. 문자열 함수 - string.h
+    - 비교: strcmp
 */
 #if 0
 int main(void) {
@@ -69,11 +71,31 @@ int main(void)
 // 5. 문자열 길이
 // size_t strlen(const char *s);
 #if 1
-int main(void)
-{
+unsigned long xstrleng(const char *str) {
+// 1. for
+#if 0
+    unsigned long len = 0;
+    for (const char *p = str; *p != '\0'; p++) {
+        len++;
+    }
+    return len;
+#endif
+#if 1
+    const char *p = str;
+    // while (!(*p++)) ;
+    /* Nothing*/
+    for(p = str; *p!='\0'; p++);
+    /* Nothing */
+    return p - str; 
+
+#endif
+
+}
+
+int main(void) {
     size_t str_length = 0;
     char str[32] = "hello";
-    str_length = strlen(str);
+    str_length = xstrleng(str);
     printf("%lu\n", str_length);
 
     return 0;
