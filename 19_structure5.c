@@ -12,23 +12,23 @@ struct AAA{
     int a;
     char b;
 };
-#pragma pack(1)
+// #pragma pack(1)
 // 표준 문법이 아닙니다.
 // => 컴파일러 확장 명령
 struct BBB{
     char a;
-    int b;
     double c;
+    int b;
 };
 // 구조체 멤버 변수의 크기 중 가장 큰 크기의 정렬을 가집니다.
 // a___bbbbcccccccc => 4 + 4 + 8 = 16
 struct CCC{
-    int a;
     double b;
+    int a;
     char c;
 };
 // aaaa_____bbbbbbbbc_______ => 8 + 8 + 8 = 24
-#if 0
+#if 1
 int main(void)
 {
     printf("%lu\n",sizeof(struct AAA));
