@@ -81,22 +81,32 @@ unsigned long xstrleng(const char *str) {
     return len;
 #endif
 #if 1
+    printf("str_size: %lu\n", sizeof((str)) / sizeof(str[0]));
     const char *p = str;
     // while (!(*p++)) ;
     /* Nothing*/
-    for(p = str; *p!='\0'; p++);
+    for (p = str; *p != '\0'; p++)
+        ;
     /* Nothing */
-    return p - str; 
+    return p - str;
 
 #endif
+}
 
+void xint_length(const int *int_arr) {
+    printf("int_arr size: %lu\n", sizeof(int_arr));
 }
 
 int main(void) {
     size_t str_length = 0;
     char str[32] = "hello";
-    str_length = xstrleng(str);
-    printf("%lu\n", str_length);
+    int temp[32] = {
+        0,
+    };
+    printf("int_arr size: %lu\n", sizeof(temp) / sizeof(temp[0]));
+    xint_length(temp);
+    // str_length = xstrleng(str);
+    // printf("%lu\n", str_length);
 
     return 0;
 }
