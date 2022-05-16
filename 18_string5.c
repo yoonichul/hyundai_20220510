@@ -52,7 +52,7 @@ int main(void) {
     // char str[32] = s;
     // => 문자열 초기화는 문자열 리터럴("hello")를 통해서만 가능합니다.
 
-    // s는 수정 불가능한 메모리
+    // s는 수정 불가능한 메모리입니다.
     // 수정하기 위해서는 s의 문자열의 크기 만큼 메모리를 할당해서
     // 수정해야 합니다.
     // char *p_str = (char *)malloc(strlen(s) + 1);
@@ -68,7 +68,7 @@ int main(void) {
 #endif
 // 2. strtok는 정적 지역 변수 / 전역 변수로 만들어져 있습니다.
 //    - thread 안정성이 없습니다.
-#if 1
+#if 0
 int main(void) {
     char s[] = "hello world show me the money";
 // 공백을 기준으로 토큰을 분리하고 싶을 떄
@@ -83,13 +83,25 @@ int main(void) {
     p = strtok(NULL, " ");
     printf("%s\n", p);
 #endif
-#if 1
+#if 0
     char *p = strtok(s, " ");
     while (p != NULL) {
         printf("%s\n", p);
         p = strtok(NULL, " ");
     }
 #endif
+    return 0;
+}
+#endif
+
+#if 1
+int main(void) {
+    const char *s1 = "hello";
+    const char *s2 = "\tworld";
+    char *s = (char *)malloc(sizeof(strlen(s1) + strlen(s2) + 1));
+    strcpy(s, s1);
+    strcat(s, s2);
+    printf("%s\n", s);
     return 0;
 }
 
