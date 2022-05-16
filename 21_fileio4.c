@@ -20,7 +20,7 @@ int main(void)
 #endif
 // Ctrl + D : Linux
 // Ctrl + Z : Windows
-// 키보드로 EOF를 전달하는 방법
+// => 키보드로 EOF를 전달하는 방법
 // ./a.out < a.txt  :  a.txt를 표준 입력(stdin)으로 적용
 // ./a.out > b.txt  : b.txt를 표준 출력(stdout)으로 적용
 #if 1
