@@ -21,9 +21,20 @@ typedef struct {
     int x;
     int y;
 } POINT;
+struct {
+    int x;
+    int y;
+}XXX1, XXX2;
+struct 
+{
+    int x;
+    int y;
+}XXX3;
 
 int main(void) {
     POINT pt;
+    // XXX1 = XXX3; // 내용은 같지만 다른 타입의 구조체입니다.
+    XXX1 = XXX2; // 태그명에 XXX1, XXX2 같이 선언되어있으므로 두 개의 구조체는 같은 타입입니다.
     return 0;
 }
 
