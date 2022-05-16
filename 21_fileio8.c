@@ -26,6 +26,7 @@ int main(void)
 //   SEEK_END : 마지막 위치
 // 반환값
 // - 성공 0, 실패 -1
+// https://devdocs.io/c/
 #if 1
 int main(void) {
     char buff[32];
@@ -34,10 +35,18 @@ int main(void) {
         fprintf(stderr, "FILE OPEN ERROR\n");
         return 1;
     }
+    char tmp;
     fprintf(fp, "hello\n");
+    printf("%d\n",fseek(fp, 2, SEEK_SET));
+
+    scanf("%d\n",&tmp);
+
+    fprintf(fp, "temp\n");
     printf("%d\n",fseek(fp, 0, SEEK_SET));
+
     fscanf(fp, "%s", buff);
     printf("buffer : %s\n", buff);
+    
     fclose(fp);
     return 0;
 }
