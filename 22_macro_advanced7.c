@@ -29,14 +29,15 @@ void print_age(int age) {
     assert(age > 0);
     printf("age: %d\n", age);
 }
-#define STATIC_ASSERT(expr) char __stat_assert_faile[(expr) ? 1 : -1] 
+#define STATIC_ASSERT(expr) char __stat_assert_faile[(expr) ? 1 : -1]
 // C11 표준에 _Static_assert(expr, reason)
 void foo() {
     // sizeof(long)이 반드시 4바이트이어야 합니다.
     // assset(sizeof(long) == 4);
     // 컴파일 타임에 체크가 가능합니다.
     // =>static_assert - C++
-    _Static_assert(sizeof(long)==8, " 64bit required"); // C 11 표준에서 사용가능한 함수입니다.
+    _Static_assert(sizeof(long) == 8,
+                   " 64bit required"); // C 11 표준에서 사용가능한 함수입니다.
     STATIC_ASSERT(sizeof(long) == 8);
 }
 
