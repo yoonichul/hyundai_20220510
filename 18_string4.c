@@ -71,7 +71,6 @@ int main(void)
 #endif
 // 5. 문자열 길이
 // size_t strlen(const char *s);
-#if 1
 unsigned long xstrleng(const char *str) {
 // 1. for
 #if 0
@@ -93,7 +92,7 @@ unsigned long xstrleng(const char *str) {
 
 #endif
 }
-
+#if 0
 void xint_length(const int *int_arr) {
     printf("int_arr size: %lu\n", sizeof(int_arr)); // return Pointer size
 }
@@ -108,6 +107,23 @@ int main(void) {
     xint_length(temp);
     // str_length = xstrleng(str);
     // printf("%lu\n", str_length);
+
+    return 0;
+}
+#endif
+#if 1
+int main(void)
+{
+    char c1 = ' ';
+    char c2 = '\n';
+    char c3 = '\t';
+    char c4 = '\\';
+
+    printf("123%c456", 32);
+
+    char str[]
+        = "hello \tworld\n";
+    printf("%lu\n", strlen(str));
 
     return 0;
 }
