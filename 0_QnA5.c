@@ -98,7 +98,9 @@ int main(void) {
 int main(void)
 {
     // int x[2][3];
+    // [ int[3] ][ int[3] ]
     // int x2[6];
+    // [int][int][int][int][int][int]
     int *x2 =(int*)malloc(sizeof(int)*6);
     int(*x)[3] = (int(*)[3])malloc(sizeof(int[3]) * 2);
     return 0;
