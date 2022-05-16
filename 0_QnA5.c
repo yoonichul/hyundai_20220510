@@ -58,7 +58,7 @@ int main(void) {
 }
 #endif
 
-#if 1
+#if 0
 #include <pthread.h>
 #include <unistd.h>
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -88,6 +88,19 @@ int main(void) {
     }
     getchar();
     printf("%d\n",n);
+    return 0;
+}
+#endif
+
+#if 1
+#include <stdlib.h>
+
+int main(void)
+{
+    // int x[2][3];
+    // int x2[6];
+    int *x2 =(int*)malloc(sizeof(int)*6);
+    int(*x)[3] = (int(*)[3])malloc(sizeof(int[3]) * 2);
     return 0;
 }
 #endif
