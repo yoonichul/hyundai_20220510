@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(void)
 {
@@ -17,6 +18,11 @@ int main(void)
     // fgetc(fp) : 파일로부터 한 글자를 읽습니다.
     while( (ch = fgetc(fp))!=EOF)
     {
+        if(islower(ch))
+            ch = toupper(ch);
+        // else if(isupper(ch))
+        //     ch = tolower(ch);
+        
         printf("%c",ch);
     }
     return 0;
