@@ -57,6 +57,7 @@ int main(void)
 // 4. 문자열 복사 함수 - strcpy
 // char *strcpy(char *dest, const char *src);
 // char *strncpy(char *dest, const char *src, size_t n);
+// => 복사되는 배열에는 충분한 메모리가 할당되어 있어야 합니다.
 #if 0
 int main(void)
 {
@@ -94,7 +95,7 @@ unsigned long xstrleng(const char *str) {
 }
 
 void xint_length(const int *int_arr) {
-    printf("int_arr size: %lu\n", sizeof(int_arr));
+    printf("int_arr size: %lu\n", sizeof(int_arr)); // return Pointer size
 }
 
 int main(void) {

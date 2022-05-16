@@ -8,6 +8,11 @@
     문자타입 - char
     문자 리터럴 - 'a', 'A', 'b', '0', 'x'
     => ASCII code
+    => UNICODE
+       한글
+        - Windows: euc-kr(CP949) / UTF-16 / UTF-8
+        - Linux: UTF-8
+        - Mac: UTF-8
     'A' : 65 / 'B' : 66
     'a' : 97 / 'b' : 98
     '0' : 48
