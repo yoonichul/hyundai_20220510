@@ -32,15 +32,15 @@ fp(10, 20);
 int main(void) {
     printf("add : %p\n", &add);
 
-    int (*p)(int, int);
+    int (*p1)(int, int);
     float (*p2)(float, float);
 
-    p = &add;
-    int add_result = (*p)(10, 20);
+    p1 = &add;
+    int add_result = (*p1)(10, 20);
     printf("add_result: %d\n", add_result);
 
-    p = &mul;
-    int mul_result = (*p)(10, 20);
+    p1 = &mul;
+    int mul_result = (*p1)(10, 20);
     printf("mul_result: %d\n", mul_result);
 
     p2 = &div;
