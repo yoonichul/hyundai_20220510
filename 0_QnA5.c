@@ -103,6 +103,8 @@ int main(void)
     // [int][int][int][int][int][int]
     int *x2 =(int*)malloc(sizeof(int)*6);
     int(*x)[3] = (int(*)[3])malloc(sizeof(int[3]) * 2);
+    free(x);
+    free(x2);
     return 0;
 }
 #endif
